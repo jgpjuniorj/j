@@ -70,6 +70,7 @@ class TestTemplate(ERP5TypeTestCase):
                                 permissions=[Permissions.AddPortalContent,
                                              Permissions.CopyOrMove,
 					     Permissions.ModifyPortalContent,
+					     Permissions.View,
                                              ])
 
   def test_Template(self):
