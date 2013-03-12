@@ -2547,7 +2547,7 @@ class BusinessTemplateMixin(TestDeveloperMixin, ERP5TypeTestCase, LogInterceptor
 
   def stepReinstallBusinessTemplate(self, sequence=None, **kw):
     import_bt = sequence.get('current_bt')
-    listbox_object_list = import_bt.BusinessTemplate_getModifiedObject()
+    listbox_object_list = import_bt.BusinessTemplate_getModifiedObjectList()
     install_kw = {}
     for listbox_line in listbox_object_list:
       install_kw[listbox_line.object_id] = listbox_line.choice_item_list[0][1]
@@ -2555,7 +2555,7 @@ class BusinessTemplateMixin(TestDeveloperMixin, ERP5TypeTestCase, LogInterceptor
 
   def stepCheckBeforeReinstall(self, sequence=None, **kw):
     import_bt = sequence.get('current_bt')
-    diff_list = import_bt.BusinessTemplate_getModifiedObject()
+    diff_list = import_bt.BusinessTemplate_getModifiedObjectList()
     self.assertTrue('portal_types/Geek Object/become_geek'
                     in [line.object_id for line in diff_list])
 

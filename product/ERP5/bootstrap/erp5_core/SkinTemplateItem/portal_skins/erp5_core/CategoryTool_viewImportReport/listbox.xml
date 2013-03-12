@@ -531,7 +531,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>CategoryTool_getImportReportFromRequest</string> </value>
+            <value> <string>CategoryTool_getFromRequestImportReportFieldList</string> </value>
         </item>
       </dictionary>
     </pickle>

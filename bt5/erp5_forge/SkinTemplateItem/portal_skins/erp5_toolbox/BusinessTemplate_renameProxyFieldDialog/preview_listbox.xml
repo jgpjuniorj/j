@@ -555,7 +555,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>BusinessTemplate_initializePreviewListBoxForRenameFastInput</string> </value>
+            <value> <string>BusinessTemplate_initializePreviewListBoxToGetProxyFieldToRenameList</string> </value>
         </item>
       </dictionary>
     </pickle>

@@ -540,7 +540,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>BusinessTemplate_getModifiedObject</string> </value>
+            <value> <string>BusinessTemplate_getModifiedObjectList</string> </value>
         </item>
       </dictionary>
     </pickle>

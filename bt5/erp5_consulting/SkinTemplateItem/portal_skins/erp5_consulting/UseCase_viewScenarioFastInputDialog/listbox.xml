@@ -525,6 +525,12 @@
                     <value> <string>Scenarii with Steps</string> </value>
                 </item>
                 <item>
+                    <key> <string>untranslatable_columns</string> </key>
+                    <value>
+                      <list/>
+                    </value>
+                </item>
+                <item>
                     <key> <string>url_columns</string> </key>
                     <value>
                       <list/>
@@ -547,7 +553,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>FastInput_initialize</string> </value>
+            <value> <string>FastInput_initializeDocumentList</string> </value>
         </item>
       </dictionary>
     </pickle>

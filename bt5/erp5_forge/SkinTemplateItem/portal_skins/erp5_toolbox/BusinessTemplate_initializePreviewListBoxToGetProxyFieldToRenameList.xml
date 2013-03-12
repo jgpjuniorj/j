@@ -50,8 +50,8 @@
         </item>
         <item>
             <key> <string>_body</string> </key>
-            <value> <string>return context.ListBox_initializeFastInput(\n
-  empty_line_number=10, **kw)\n
+            <value> <string>return context.Listbox_initializeFastInputDocumentList(\n
+  listbox_id=\'preview_listbox\', empty_line_number=0, **kw)\n
 </string> </value>
         </item>
         <item>
@@ -60,7 +60,7 @@
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>BusinessTemplate_initializeListBoxForRenameFastInput</string> </value>
+            <value> <string>BusinessTemplate_initializePreviewListBoxToGetProxyFieldToRenameList</string> </value>
         </item>
       </dictionary>
     </pickle>

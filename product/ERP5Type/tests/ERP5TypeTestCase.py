@@ -920,8 +920,8 @@ class ERP5TypeCommandLineTestCase(ERP5TypeTestCaseMixin):
                                      quiet=True):
       template_tool = self.portal.portal_templates
       update_business_templates = os.environ.get('update_business_templates') is not None
-      BusinessTemplate_getModifiedObject = aq_base(
-        getattr(self.portal, 'BusinessTemplate_getModifiedObject', None))
+      BusinessTemplate_getModifiedObjectList = aq_base(
+        getattr(self.portal, 'BusinessTemplate_getModifiedObjectList', None))
 
       # Add some business templates
       for url, bt_title in business_template_list:
@@ -931,7 +931,7 @@ class ERP5TypeCommandLineTestCase(ERP5TypeTestCaseMixin):
           if update_business_templates:
             if not quiet:
               ZopeTestCase._print('Updating %s business template ... ' % bt_title)
-            if BusinessTemplate_getModifiedObject is not None:
+            if BusinessTemplate_getModifiedObjectList is not None:
               get_install_kw = True
           else:
             continue
@@ -949,7 +949,7 @@ class ERP5TypeCommandLineTestCase(ERP5TypeTestCaseMixin):
         install_kw = None
         if get_install_kw:
           install_kw = {}
-          listbox_object_list = BusinessTemplate_getModifiedObject.__of__(bt)()
+          listbox_object_list = BusinessTemplate_getModifiedObjectList.__of__(bt)()
           for listbox_line in listbox_object_list:
             install_kw[listbox_line.object_id] = listbox_line.choice_item_list[0][1]
         bt.install(light_install=light_install,

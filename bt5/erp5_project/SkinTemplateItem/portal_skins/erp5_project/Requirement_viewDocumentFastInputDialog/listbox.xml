@@ -583,7 +583,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>Project_initializeFastInput</string> </value>
+            <value> <string>Project_initializeFastInputTaskList</string> </value>
         </item>
       </dictionary>
     </pickle>

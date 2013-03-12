@@ -50,46 +50,21 @@
         </item>
         <item>
             <key> <string>_body</string> </key>
-            <value> <string>from Products.ERP5Type.Document import newTempBase\n
-from string import zfill\n
+            <value> <string>if context.isResourceType():\n
+  uid_list = context.getUid()\n
+else:\n
+  uid_list = context.ResourceModule_getSelection().getUidList()\n
 \n
-global portal_object, new_id, l\n
-\n
-portal_object = context.getPortalObject()\n
-\n
-if lines_num is None:\n
-  lines_num = portal_object.portal_preferences.getPreferredListboxListModeLineCount() or 40\n
-\n
-new_id = 0\n
-l = []\n
-\n
-\n
-# function to create a new fast input line\n
-def createInputLine():\n
-  global portal_object, new_id, l\n
-  new_id += 1\n
-  int_len = 3\n
-  o = newTempBase( portal_object,\n
-                   str(new_id),\n
-                   uid =\'new_%s\' % zfill(new_id, int_len)\n
-                 )\n
-  l.append(o)\n
-\n
-# generate all lines for the fast input form\n
-for x in range(lines_num):\n
-  createInputLine()\n
-\n
-# return the list of fast input lines\n
-return l\n
+return context.portal_simulation.getInventoryList(transformed_resource=transformed_resource_list,resource_uid=uid_list)\n
 </string> </value>
         </item>
         <item>
             <key> <string>_params</string> </key>
-            <value> <string>lines_num=None, **kw</string> </value>
+            <value> <string>transformed_resource_list, **kw</string> </value>
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>Project_initializeFastInput</string> </value>
+            <value> <string>Resource_getTransformedResourceInventoryList</string> </value>
         </item>
       </dictionary>
     </pickle>

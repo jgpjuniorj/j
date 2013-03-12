@@ -783,7 +783,7 @@ return new_line_list\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>AccountModule_getAccountListForTrialBalance</string> </value>
+            <value> <string>AccountModule_getTrialBalanceAccountList</string> </value>
         </item>
       </dictionary>
     </pickle>

@@ -59,7 +59,7 @@
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>CategoryTool_getImportReportFromRequest</string> </value>
+            <value> <string>CategoryTool_getFromRequestImportReportFieldList</string> </value>
         </item>
       </dictionary>
     </pickle>

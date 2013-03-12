@@ -597,7 +597,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>Resource_getTransformedResourceInventory</string> </value>
+            <value> <string>Resource_getTransformedResourceInventoryList</string> </value>
         </item>
       </dictionary>
     </pickle>

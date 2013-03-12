@@ -135,8 +135,7 @@ def checkField(folder, form, field):\n
       if a not in (None, "portal_catalog", "searchFolder", "objectValues",\n
                    "contentValues", "ListBox_initializeFastInput"):\n
         if not a.endswith(\'List\'):\n
-          if 0:\n
-            error_message += "%s : %s : %r Bad Naming Convention\\n" % (path, id, a)\n
+          error_message += "%s : %s : %r Bad Naming Convention\\n" % (path, id, a)\n
   return error_message\n
 \n
 def isListBox(field):\n

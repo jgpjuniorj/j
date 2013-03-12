@@ -122,7 +122,7 @@ return [Object(debit_price=debit, credit_price=credit)]\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>AccountModule_getGeneralLedgerSummary</string> </value>
+            <value> <string>AccountModule_getGeneralLedgerSummarySectionList</string> </value>
         </item>
       </dictionary>
     </pickle>

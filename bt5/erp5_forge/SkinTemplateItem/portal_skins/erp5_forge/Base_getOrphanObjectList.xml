@@ -86,7 +86,7 @@ for o in objects:\n
           # orphan object\n
           orphans_list.append(object_path)\n
       # Recursively check children\n
-      orphans_list.extend([x.uid for x in context.Base_getOrphanObjects(object=o)])\n
+      orphans_list.extend([x.uid for x in context.Base_getOrphanObjectList(object=o)])\n
 \n
 object_list = []\n
 for orphan in orphans_list:\n
@@ -107,7 +107,7 @@ return object_list\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>Base_getOrphanObjects</string> </value>
+            <value> <string>Base_getOrphanObjectList</string> </value>
         </item>
       </dictionary>
     </pickle>

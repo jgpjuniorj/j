@@ -563,7 +563,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>ListBox_listCheckbook</string> </value>
+            <value> <string>Listbox_listCheckbookList</string> </value>
         </item>
       </dictionary>
     </pickle>

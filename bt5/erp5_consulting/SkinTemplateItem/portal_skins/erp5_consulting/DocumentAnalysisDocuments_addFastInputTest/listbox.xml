@@ -586,7 +586,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>FastInput_initialize</string> </value>
+            <value> <string>FastInput_initializeDocumentList</string> </value>
         </item>
       </dictionary>
     </pickle>
