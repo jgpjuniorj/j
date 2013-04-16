@@ -20,6 +20,7 @@ from AccessControl import ClassSecurityInfo
 from AccessControl.AuthEncoding import pw_validate
 from AccessControl.SecurityManagement import getSecurityManager,\
     setSecurityManager, newSecurityManager
+from AccessControl.User import system as system_user
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.PluggableAuthService.PluggableAuthService import \
     _SWALLOWABLE_PLUGIN_EXCEPTIONS
@@ -124,7 +125,7 @@ class ERP5UserManager(BasePlugin):
           login = credentials.get('external_login')
           ignore_password = True
         # Forbidden the usage of the super user.
-        if login == SUPER_USER:
+        if login in (SUPER_USER, system_user.getUserName()):
           return None
 
         @UnrestrictedMethod
@@ -224,9 +225,9 @@ class ERP5UserManager(BasePlugin):
 
         id_list = []
         for user_id in id:
-          if SUPER_USER == user_id:
-            info = { 'id' : SUPER_USER
-                    , 'login' : SUPER_USER
+          if user_id in (SUPER_USER, system_user.getUserName()):
+            info = { 'id' : user_id
+                    , 'login' : user_id
                     , 'pluginid' : plugin_id
                     }
             user_info.append(info)

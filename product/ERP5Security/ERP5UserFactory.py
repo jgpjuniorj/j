@@ -18,6 +18,7 @@
 from Products.ERP5Type.Globals import InitializeClass
 from Acquisition import aq_inner, aq_parent
 from AccessControl import ClassSecurityInfo
+from AccessControl.User import system as system_user
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from App.config import getConfiguration
 from Products.PluggableAuthService.plugins.BasePlugin import BasePlugin
@@ -102,7 +103,7 @@ class ERP5User(PropertiedUser):
       As for getRolesInContext, we take into account _getAcquireLocalRoles for
       ERP5.
       """
-      if self.getUserName() == SUPER_USER:
+      if self.getUserName() in (SUPER_USER, system_user.getUserName()):
         # super user is allowed to accesss any object
         return 1
 

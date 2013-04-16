@@ -245,22 +245,23 @@ class Message(BaseMessage):
     portal = activity_tool.getPortalObject()
     portal_uf = portal.acl_users
     uf = portal_uf
-    user = uf.getUserById(user_name)
-    # if the user is not found, try to get it from a parent acl_users
-    # XXX this is still far from perfect, because we need to store all
-    # information about the user (like original user folder, roles) to
-    # replay the activity with exactly the same security context as if
-    # it had been executed without activity.
-    if user is None:
-      uf = portal.aq_parent.acl_users
-      user = uf.getUserById(user_name)
-    if user is None and user_name == system_user.getUserName():
+    if user_name == system_user.getUserName():
       # The following logic partly comes from unrestricted_apply()
       # implementation in ERP5Type.UnrestrictedMethod but we get roles
       # from the portal to have more roles.
       uf = portal_uf
       role_list = uf.valid_roles()
       user = PrivilegedUser(user_name, None, role_list, ()).__of__(uf)
+    else:
+      user = uf.getUserById(user_name)
+      # if the user is not found, try to get it from a parent acl_users
+      # XXX this is still far from perfect, because we need to store all
+      # information about the user (like original user folder, roles) to
+      # replay the activity with exactly the same security context as if
+      # it had been executed without activity.
+      if user is None:
+        uf = portal.aq_parent.acl_users
+        user = uf.getUserById(user_name)
     if user is not None:
       user = user.__of__(uf)
       newSecurityManager(None, user)
