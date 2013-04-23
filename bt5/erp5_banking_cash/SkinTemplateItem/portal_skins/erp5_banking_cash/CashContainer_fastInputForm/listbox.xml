@@ -628,7 +628,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>Listbox_getCashContainerList</string> </value>
+            <value> <string>CashMovement_getCashContainerFastInputList</string> </value>
         </item>
       </dictionary>
     </pickle>
