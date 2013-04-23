@@ -89,7 +89,7 @@ return l\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>Project_initializeFastInputTaskList</string> </value>
+            <value> <string>Project_createTaskFastInputList</string> </value>
         </item>
       </dictionary>
     </pickle>
