@@ -129,7 +129,7 @@ return context.ListBox_initializeFastInput()\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>Listbox_listCheckbookList</string> </value>
+            <value> <string>Delivery_getCheckbookFastInputList</string> </value>
         </item>
       </dictionary>
     </pickle>
