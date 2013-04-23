@@ -359,6 +359,10 @@
                     <value> <string></string> </value>
                 </item>
                 <item>
+                    <key> <string>default_display_style</string> </key>
+                    <value> <string>table</string> </value>
+                </item>
+                <item>
                     <key> <string>default_params</string> </key>
                     <value>
                       <list/>
@@ -553,7 +557,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>AccountModule_getGeneralLedgerSummarySectionList</string> </value>
+            <value> <string>AccountModule_getGeneralLedgerSummaryLineList</string> </value>
         </item>
       </dictionary>
     </pickle>
