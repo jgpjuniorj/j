@@ -70,7 +70,9 @@
                 <item>
                     <key> <string>center</string> </key>
                     <value>
-                      <list/>
+                      <list>
+                        <string>my_description</string>
+                      </list>
                     </value>
                 </item>
                 <item>
@@ -83,7 +85,6 @@
                     <key> <string>left</string> </key>
                     <value>
                       <list>
-                        <string>my_description</string>
                         <string>my_destination_title</string>
                         <string>my_outcome_description</string>
                         <string>my_price</string>

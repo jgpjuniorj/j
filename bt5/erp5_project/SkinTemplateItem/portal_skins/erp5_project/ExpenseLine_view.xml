@@ -38,6 +38,16 @@
             <value> <string>Base_edit</string> </value>
         </item>
         <item>
+            <key> <string>description</string> </key>
+            <value> <string></string> </value>
+        </item>
+        <item>
+            <key> <string>edit_order</string> </key>
+            <value>
+              <list/>
+            </value>
+        </item>
+        <item>
             <key> <string>encoding</string> </key>
             <value> <string>UTF-8</string> </value>
         </item>
@@ -73,7 +83,6 @@
                     <key> <string>left</string> </key>
                     <value>
                       <list>
-                        <string>my_id</string>
                         <string>my_start_date</string>
                         <string>my_stop_date</string>
                         <string>my_default_order_title</string>
@@ -105,7 +114,7 @@
         </item>
         <item>
             <key> <string>name</string> </key>
-            <value> <string>ProjectReportLine_view</string> </value>
+            <value> <string>ExpenseLine_view</string> </value>
         </item>
         <item>
             <key> <string>pt</string> </key>
@@ -129,6 +138,10 @@
         </item>
         <item>
             <key> <string>update_action</string> </key>
+            <value> <string></string> </value>
+        </item>
+        <item>
+            <key> <string>update_action_title</string> </key>
             <value> <string></string> </value>
         </item>
       </dictionary>

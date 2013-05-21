@@ -70,7 +70,9 @@
                 <item>
                     <key> <string>center</string> </key>
                     <value>
-                      <list/>
+                      <list>
+                        <string>my_description</string>
+                      </list>
                     </value>
                 </item>
                 <item>
@@ -97,7 +99,6 @@
                         <string>my_stop_date</string>
                         <string>my_total_quantity</string>
                         <string>my_total_price</string>
-                        <string>my_description</string>
                         <string>my_requirement_logical_path_list</string>
                       </list>
                     </value>

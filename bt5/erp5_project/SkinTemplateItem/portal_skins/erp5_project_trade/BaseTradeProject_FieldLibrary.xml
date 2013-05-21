@@ -50,6 +50,7 @@
             <value>
               <list>
                 <string>Default</string>
+                <string>right</string>
               </list>
             </value>
         </item>
@@ -78,7 +79,6 @@
                         <string>my_source_administration_title</string>
                         <string>my_source_section_title</string>
                         <string>simulation_state</string>
-                        <string>my_translated_simulation_state_title</string>
                         <string>my_description</string>
                         <string>my_quantity</string>
                         <string>my_quantity_unit</string>
@@ -87,6 +87,14 @@
                         <string>my_source_payment_title</string>
                         <string>my_source_decision_title</string>
                         <string>my_requirement_reference_list</string>
+                      </list>
+                    </value>
+                </item>
+                <item>
+                    <key> <string>right</string> </key>
+                    <value>
+                      <list>
+                        <string>my_translated_simulation_state_title</string>
                       </list>
                     </value>
                 </item>

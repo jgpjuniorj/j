@@ -116,7 +116,7 @@
         </item>
         <item>
             <key> <string>name</string> </key>
-            <value> <string>Preference_viewProject</string> </value>
+            <value> <string>SystemPreference_viewProject</string> </value>
         </item>
         <item>
             <key> <string>pt</string> </key>
