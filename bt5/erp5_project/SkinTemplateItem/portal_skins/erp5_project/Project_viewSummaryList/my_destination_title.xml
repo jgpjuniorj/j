@@ -77,7 +77,7 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Project_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>portal_type</string> </key>

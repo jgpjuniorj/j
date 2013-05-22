@@ -10,7 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
-                <string>editable</string>
+                <string>description</string>
               </list>
             </value>
         </item>
@@ -72,8 +72,8 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>editable</string> </key>
-                    <value> <int>0</int> </value>
+                    <key> <string>description</string> </key>
+                    <value> <string>The name of the requirement.</string> </value>
                 </item>
                 <item>
                     <key> <string>field_id</string> </key>
@@ -81,7 +81,7 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Requirement_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>

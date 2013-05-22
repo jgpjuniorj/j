@@ -7,6 +7,12 @@
     <pickle>
       <dictionary>
         <item>
+            <key> <string>delegated_list</string> </key>
+            <value>
+              <list/>
+            </value>
+        </item>
+        <item>
             <key> <string>id</string> </key>
             <value> <string>my_preferred_header_title</string> </value>
         </item>
@@ -69,7 +75,7 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewKnowledgePadFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>

@@ -9,7 +9,9 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list/>
+              <list>
+                <string>description</string>
+              </list>
             </value>
         </item>
         <item>
@@ -32,15 +34,15 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>extra_context</string> </key>
-                    <value> <string></string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string></string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
+                    <value> <string></string> </value>
+                </item>
+                <item>
+                    <key> <string>target</string> </key>
                     <value> <string></string> </value>
                 </item>
               </dictionary>
@@ -51,15 +53,15 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>extra_context</string> </key>
-                    <value> <string></string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string></string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
+                    <value> <string></string> </value>
+                </item>
+                <item>
+                    <key> <string>target</string> </key>
                     <value> <string></string> </value>
                 </item>
               </dictionary>
@@ -70,10 +72,8 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>extra_context</string> </key>
-                    <value>
-                      <list/>
-                    </value>
+                    <key> <string>description</string> </key>
+                    <value> <string>To whom the task had been assigned.</string> </value>
                 </item>
                 <item>
                     <key> <string>field_id</string> </key>
@@ -81,7 +81,11 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>TaskReport_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
+                </item>
+                <item>
+                    <key> <string>target</string> </key>
+                    <value> <string>Click to edit the target</string> </value>
                 </item>
               </dictionary>
             </value>

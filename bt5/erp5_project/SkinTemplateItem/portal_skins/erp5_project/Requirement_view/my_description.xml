@@ -9,7 +9,10 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list/>
+              <list>
+                <string>height</string>
+                <string>width</string>
+              </list>
             </value>
         </item>
         <item>
@@ -75,11 +78,19 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Requirement_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
+                </item>
+                <item>
+                    <key> <string>height</string> </key>
+                    <value> <int>10</int> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
+                </item>
+                <item>
+                    <key> <string>width</string> </key>
+                    <value> <int>100</int> </value>
                 </item>
               </dictionary>
             </value>

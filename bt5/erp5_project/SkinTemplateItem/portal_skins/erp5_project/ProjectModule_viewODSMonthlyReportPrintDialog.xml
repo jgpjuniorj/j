@@ -100,7 +100,7 @@
         </item>
         <item>
             <key> <string>name</string> </key>
-            <value> <string>Project_viewODSMonthlyPrintDialog</string> </value>
+            <value> <string>ProjectModule_viewODSMonthlyReportPrintDialog</string> </value>
         </item>
         <item>
             <key> <string>pt</string> </key>

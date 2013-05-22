@@ -11,11 +11,8 @@
             <value>
               <list>
                 <string>title</string>
-                <string>catalog_index</string>
                 <string>portal_type</string>
-                <string>height</string>
                 <string>width</string>
-                <string>base_category</string>
                 <string>parameter_list</string>
               </list>
             </value>
@@ -84,24 +81,12 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>base_category</string> </key>
-                    <value> <string>predecessor</string> </value>
-                </item>
-                <item>
-                    <key> <string>catalog_index</string> </key>
-                    <value> <string>title</string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_multi_relation_field</string> </value>
+                    <value> <string>my_predecessor_title_list</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewFieldLibrary</string> </value>
-                </item>
-                <item>
-                    <key> <string>height</string> </key>
-                    <value> <int>4</int> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>portal_type</string> </key>

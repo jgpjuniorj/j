@@ -11,7 +11,6 @@
             <value>
               <list>
                 <string>display_width</string>
-                <string>editable</string>
               </list>
             </value>
         </item>
@@ -77,16 +76,12 @@
                     <value> <int>20</int> </value>
                 </item>
                 <item>
-                    <key> <string>editable</string> </key>
-                    <value> <int>0</int> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string>my_reference</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Requirement_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>
