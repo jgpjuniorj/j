@@ -108,9 +108,9 @@
                         <string>my_stop_date_range_max</string>
                         <string>my_stop_date_range_min</string>
                         <string>my_task_line_quantity_unit</string>
-                        <string>your_at_date</string>
-                        <string>your_from_date</string>
-                        <string>your_simulation_state</string>
+                        <string>my_at_date</string>
+                        <string>my_from_date</string>
+                        <string>my_simulation_state</string>
                         <string>my_destination_decision_title</string>
                         <string>my_destination_section_title</string>
                         <string>my_requirement_title</string>
