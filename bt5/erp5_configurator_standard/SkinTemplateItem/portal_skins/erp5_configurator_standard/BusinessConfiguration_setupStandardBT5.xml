@@ -65,9 +65,11 @@ bt5_installation_list = (\'erp5_dhtml_style\',\n
                          \'erp5_configurator_standard_trade_template\',\n
                          \'erp5_configurator_standard_accounting_template\',\n
                          \'erp5_configurator_standard_invoicing_template\',\n
+                         \'erp5_configurator_standard_project_template\',\n
                          \'erp5_ods_style\',\n
                          \'erp5_odt_style\',\n
                          \'erp5_ooo_import\',\n
+                         \'erp5_project\',\n
                         )\n
 \n
 bt5_update_catalog = (\'erp5_ingestion_mysql_innodb_catalog\', \'erp5_accounting\', )\n
