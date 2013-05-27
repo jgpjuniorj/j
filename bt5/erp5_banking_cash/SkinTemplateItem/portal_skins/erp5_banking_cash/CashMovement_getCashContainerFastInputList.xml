@@ -102,7 +102,7 @@ for o in context.portal_simulation.getCurrentTrackingList(**tracking_kw):\n
     \'total_price\': container_line.getTotalPrice(fast=0),\n
   })\n
 context.Base_updateDialogForm(listbox=listbox)\n
-return context.ListBox_initializeFastInput()\n
+return context.ERP5Banking_createFastInputLineList()\n
 </string> </value>
         </item>
         <item>
