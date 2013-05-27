@@ -84,7 +84,7 @@ return l\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>ERP5Consulting_createFastInputDocumentList</string> </value>
+            <value> <string>ERP5Consulting_createFastInputLineList</string> </value>
         </item>
       </dictionary>
     </pickle>
