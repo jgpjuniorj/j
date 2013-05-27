@@ -570,7 +570,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>Base_createFastInputDocumentList</string> </value>
+            <value> <string>Base_createFastInputLineList</string> </value>
         </item>
       </dictionary>
     </pickle>
