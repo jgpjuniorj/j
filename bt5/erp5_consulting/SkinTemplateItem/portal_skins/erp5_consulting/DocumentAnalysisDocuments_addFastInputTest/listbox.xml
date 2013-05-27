@@ -586,7 +586,7 @@
       <dictionary>
         <item>
             <key> <string>method_name</string> </key>
-            <value> <string>FastInput_initializeDocumentList</string> </value>
+            <value> <string>ERP5Consulting_createFastInputDocumentList</string> </value>
         </item>
       </dictionary>
     </pickle>
