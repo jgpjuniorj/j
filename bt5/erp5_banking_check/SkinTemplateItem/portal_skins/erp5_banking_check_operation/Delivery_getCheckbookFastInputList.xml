@@ -120,7 +120,7 @@ listbox = context.Delivery_getCheckbookList(\n
                     limit=limit)\n
 context.Base_updateDialogForm(listbox=listbox)\n
 \n
-return context.ListBox_initializeFastInput()\n
+return context.ERP5Banking_createFastInputLineList()\n
 </string> </value>
         </item>
         <item>
