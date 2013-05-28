@@ -237,6 +237,7 @@ class AccountingTestCase(ERP5TypeTestCase):
             'erp5_configurator_standard_trade_template',
             'erp5_configurator_standard_accounting_template',
             'erp5_configurator_standard_invoicing_template',
+            'erp5_configurator_standard_project_template',
             'erp5_simulation_test')
 
 

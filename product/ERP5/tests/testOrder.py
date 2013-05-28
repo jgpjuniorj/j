@@ -67,6 +67,7 @@ class TestOrderMixin(SubcontentReindexingWrapper):
             'erp5_simulation', 'erp5_trade', 'erp5_apparel', 'erp5_project',
             'erp5_configurator_standard_solver',
             'erp5_configurator_standard_trade_template',
+            'erp5_configurator_standard_project_template',
             'erp5_simulation_test', 'erp5_administration')
 
   def login(self, quiet=0, run=1):

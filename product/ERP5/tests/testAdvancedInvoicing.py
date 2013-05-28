@@ -139,7 +139,8 @@ class TestAdvancedInvoice(TestSaleInvoiceMixin, ERP5TypeTestCase):
         'erp5_configurator_standard_trade_template',
         'erp5_configurator_standard_invoicing_template',
         'erp5_configurator_standard_accounting_template',
-        'erp5_configurator_standard_solver', 'erp5_simulation_test')
+        'erp5_configurator_standard_solver', 'erp5_simulation_test',
+        'erp5_configurator_standard_project_template')
 
   def stepStartRelatedInvoice(self, sequence=None, sequence_list=None, **kw):
     packing_list = sequence.get('packing_list')
