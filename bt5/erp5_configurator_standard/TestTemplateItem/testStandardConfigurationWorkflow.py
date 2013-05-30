@@ -63,6 +63,7 @@ class StandardConfigurationMixin(TestLiveConfiguratorWorkflowMixin):
       stepCheckSaleTradeCondition
       stepCheckPurchaseTradeCondition
       stepCheckSaleOrderSimulation
+      stepCheckTaskSimulation
       '''
 
   SECURITY_CONFIGURATION_SEQUENCE = """
@@ -1012,6 +1013,119 @@ class StandardConfigurationMixin(TestLiveConfiguratorWorkflowMixin):
                                                        destination_decision)
     self.assertEquals(simulation_movement.getDestinationAdministrationValue(),
                                                  destination_administration)
+
+
+  def stepCheckTaskSimulation(self, sequence=None, sequence_list=None, **kw):
+    """
+      After the configuration we need to make sure that Simulation for
+      Task is working as expected.
+    """
+    portal = self.getPortal()
+    business_configuration = sequence.get('business_configuration')
+    
+    # Check relation with Business Process
+    business_process_list = \
+              self.getBusinessConfigurationObjectList(business_configuration,
+                                                           'Business Process')
+    self.assertEquals(len(business_process_list), 1)
+
+    business_process = business_process_list[0]
+
+    self.validateRules()
+    self.tic()
+    organisation_module = portal.getDefaultModule(
+                                   portal_type='Organisation')
+    organisation1 = organisation_module.newContent(
+                        portal_type='Organisation',
+                        title='Organization 1',
+    )
+    organisation2 = organisation_module.newContent(
+                        portal_type='Organisation',
+                        title='Organization 2',
+    )
+    resource_module = portal.getDefaultModule('Service')
+    resource = resource_module.newContent(
+        portal_type='Service',
+        title = 'Resource1',
+    )
+    project_module = portal.getDefaultModule('Project')
+    project = project_module.newContent(
+        portal_type='Project',
+        title = 'Project',
+    )
+    requirement_document_module = portal.getDefaultModule('Requirement Document')
+    requirement = requirement_document_module.newContent(
+        portal_type='Requirement Document',
+        title = 'Requirement Document',
+    )
+    sub_requirement = requirement.newContent(
+        portal_type='Requirement',
+        title = 'Requirement',
+    )
+    task_module = self.portal.getDefaultModule(
+        portal_type='Task')
+    task = task_module.newContent(
+        portal_type='Task',
+        title=str(self),
+        description="This is a very simple task. You can do it quickly.",
+        specialise=business_process.getRelativeUrl())
+        
+    currency_module = self.getCurrencyModule()
+    if len(currency_module.objectValues(id='EUR'))==0:
+      currency = self.getCurrencyModule().newContent(
+          portal_type='Currency',
+          id="EUR",
+          base_unit_quantity=0.01,
+          )
+    else:
+      currency = currency_module.objectValues(id='EUR')[0]
+    task.edit(source_value=organisation1,
+              source_section_value=organisation1,
+              destination_value=organisation2,
+              destination_section_value=organisation2,
+              source_project_value=project,
+              destination_project_value=project,
+              description='Task Description I',
+              start_date = DateTime() + 10,
+              stop_date = DateTime() + 20,)
+    task.edit(task_line_resource_value = resource,
+              task_line_quantity = 99.99999999,
+              task_line_price = 555.88888888,
+              task_line_requirement_value = requirement,
+              task_line_description = 'Default Task Line Description',
+    )
+    task.setPriceCurrency(currency.getRelativeUrl())
+    # ConfirmTask
+    task.confirm()
+    self.tic()
+    self.assertEquals(task.getSimulationState(), 'confirmed')
+    # stepCheckTaskSimulation
+    causality_list = task.getCausalityRelatedValueList(portal_type='Applied Rule')
+    self.assertEquals(len(causality_list), 1)
+    applied_rule = causality_list[0]
+    self.assertEquals(applied_rule.getPortalType(), 'Applied Rule')
+    rule = applied_rule.getSpecialiseValue()
+    self.assertNotEquals(rule, None)
+    self.assertEquals(rule.getReference(), 'default_order_rule')
+    self.assertEquals(applied_rule.objectCount(), 1)
+
+    simulation_movement = applied_rule.objectValues()[0]
+    self.assertEquals(simulation_movement.getPortalType(),
+                                                      'Simulation Movement')
+    self.assertEquals(simulation_movement.getQuantity(), 99.999999990000006)
+    self.assertEquals(simulation_movement.getResourceValue(), resource)
+
+    self.assertNotEquals(simulation_movement.getCausality(), None)
+    self.assertEquals(simulation_movement.getSourceValue(),
+                                                      organisation1)
+    self.assertEquals(simulation_movement.getSourceSectionValue(),
+                                                      organisation1)
+    self.assertEquals(simulation_movement.getDestinationValue(),
+                                                      organisation2)
+    self.assertEquals(simulation_movement.getDestinationSectionValue(),
+                                                 organisation2)
+    self.assertEquals(simulation_movement.getDestinationProjectValue(),
+                                                       project)
 
 
 class TestConsultingConfiguratorWorkflow(StandardConfigurationMixin):
