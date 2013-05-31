@@ -120,6 +120,8 @@ class StandardConfigurationMixin(TestLiveConfiguratorWorkflowMixin):
       stepViewAccessAddSaleOrder
       stepViewAccessAddSalePackingList
       stepViewAccessPurchaseOrder
+      stepViewAccessAddTask
+      stepViewAccessAddTaskReport
       stepPurchasePackingList
       stepWebSiteModule
       stepPortalContributionsTool

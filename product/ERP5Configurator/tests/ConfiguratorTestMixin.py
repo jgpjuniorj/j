@@ -1789,7 +1789,47 @@ class TestLiveConfiguratorWorkflowMixin(SecurityTestCase):
       self.assertEquals('confirmed', order.getSimulationState())
       self.assertUserCanViewDocument(username, order)
       self.failIfUserCanModifyDocument(username, order)
+ 
+  def stepViewAccessAddTask(self, sequence=None, sequence_list=None, **kw):
+    module = self.portal.task_module
+    for username in self.all_username_list:
+      self.assertUserCanViewDocument(username, module)
+      self.assertUserCanAccessDocument(username, module)
+    for username in self.sales_and_purchase_username_list:
+      self.assertUserCanAddDocument(username, module)
+      self._loginAsUser(username)
+      task = module.newContent(portal_type='Task')
+      self.assertUserCanViewDocument(username, task)
+      self.failUnlessUserCanPassWorkflowTransition(
+                    username, 'plan_action', task)
+      self.failUnlessUserCanPassWorkflowTransition(
+                    username, 'confirm_action', task)
+      self.failUnlessUserCanPassWorkflowTransition(
+                    username, 'cancel_action', task)
 
+      task.confirm()
+      self.assertEquals('confirmed', task.getSimulationState())
+      self.assertUserCanViewDocument(username, task)
+      self.failIfUserCanModifyDocument(username, task)
+      
+  def stepViewAccessAddTaskReport(self, sequence=None, sequence_list=None, **kw):
+    module = self.portal.task_report_module
+    for username in self.all_username_list:
+      self.assertUserCanViewDocument(username, module)
+      self.assertUserCanAccessDocument(username, module)
+    for username in self.sales_and_purchase_username_list:
+      self.assertUserCanAddDocument(username, module)
+      self._loginAsUser(username)
+      task_report = module.newContent(portal_type='Task Report')
+      self.assertUserCanViewDocument(username, task_report)
+      self.failUnlessUserCanPassWorkflowTransition(
+                    username, 'confirm_action', task_report)
+
+      task_report.confirm()
+      self.assertEquals('confirmed', task_report.getSimulationState())
+      self.assertUserCanViewDocument(username, task_report)
+      self.assertUserCanModifyDocument(username, task_report)
+      
   def stepPurchasePackingList(self, sequence=None, sequence_list=None, **kw):
     module = self.portal.purchase_packing_list_module
     for username in self.all_username_list:
