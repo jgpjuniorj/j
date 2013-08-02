@@ -1,0 +1,14 @@
+<workflow_chain>
+ <chain>
+  <type>Computer Item</type>
+  <workflow>edit_workflow</workflow>
+ </chain>
+ <chain>
+  <type>Printer Item</type>
+  <workflow>edit_workflow</workflow>
+ </chain>
+ <chain>
+  <type>Router Item</type>
+  <workflow>edit_workflow</workflow>
+ </chain>
+</workflow_chain>
