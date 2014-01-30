@@ -83,7 +83,7 @@
                     <key> <string>left</string> </key>
                     <value>
                       <list>
-                        <string>your_simulation_state</string>
+                        <string>your_translated_simulation_state_title</string>
                         <string>your_at_date</string>
                         <string>your_from_date</string>
                       </list>

@@ -17,7 +17,7 @@
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>your_simulation_state</string> </value>
+            <value> <string>your_translated_simulation_state_title</string> </value>
         </item>
         <item>
             <key> <string>message_values</string> </key>
