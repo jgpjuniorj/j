@@ -10,6 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
                 <string>required</string>
               </list>
             </value>
@@ -71,6 +72,10 @@
             <key> <string>values</string> </key>
             <value>
               <dictionary>
+                <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>Beginning Date</string> </value>
+                </item>
                 <item>
                     <key> <string>field_id</string> </key>
                     <value> <string>your_from_date</string> </value>

@@ -10,6 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
                 <string>enabled</string>
               </list>
             </value>
@@ -71,6 +72,10 @@
             <key> <string>values</string> </key>
             <value>
               <dictionary>
+                <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>Project Index</string> </value>
+                </item>
                 <item>
                     <key> <string>enabled</string> </key>
                     <value> <int>1</int> </value>

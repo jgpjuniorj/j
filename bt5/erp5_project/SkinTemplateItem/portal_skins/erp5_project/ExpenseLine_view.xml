@@ -73,7 +73,7 @@
                     <key> <string>left</string> </key>
                     <value>
                       <list>
-                        <string>my_id</string>
+                        <string>my_reference</string>
                         <string>my_start_date</string>
                         <string>my_stop_date</string>
                         <string>my_default_order_title</string>

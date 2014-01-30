@@ -10,6 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
                 <string>display_width</string>
                 <string>title</string>
               </list>
@@ -72,6 +73,10 @@
             <key> <string>values</string> </key>
             <value>
               <dictionary>
+                <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>Using this property you can set requester in gadget</string> </value>
+                </item>
                 <item>
                     <key> <string>display_width</string> </key>
                     <value> <int>20</int> </value>

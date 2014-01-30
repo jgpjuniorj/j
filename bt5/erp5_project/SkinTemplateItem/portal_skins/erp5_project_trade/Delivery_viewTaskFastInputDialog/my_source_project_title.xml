@@ -10,6 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
                 <string>display_width</string>
                 <string>title</string>
               </list>
@@ -72,6 +73,10 @@
             <key> <string>values</string> </key>
             <value>
               <dictionary>
+                <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>The default project that the task is related to</string> </value>
+                </item>
                 <item>
                     <key> <string>display_width</string> </key>
                     <value> <int>20</int> </value>

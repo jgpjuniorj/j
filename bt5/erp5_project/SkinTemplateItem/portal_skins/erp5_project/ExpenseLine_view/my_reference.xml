@@ -10,6 +10,7 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
                 <string>display_width</string>
                 <string>required</string>
                 <string>title</string>
@@ -18,7 +19,7 @@
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>my_id</string> </value>
+            <value> <string>my_reference</string> </value>
         </item>
         <item>
             <key> <string>message_values</string> </key>
@@ -74,6 +75,10 @@
             <value>
               <dictionary>
                 <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>Reference of the expense</string> </value>
+                </item>
+                <item>
                     <key> <string>display_width</string> </key>
                     <value> <int>20</int> </value>
                 </item>
@@ -95,7 +100,7 @@
                 </item>
                 <item>
                     <key> <string>title</string> </key>
-                    <value> <string>ID</string> </value>
+                    <value> <string>Reference</string> </value>
                 </item>
               </dictionary>
             </value>
