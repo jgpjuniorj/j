@@ -2449,14 +2449,16 @@ class Catalog(Folder,
   def getSearchResultsMethod(self):
     return getattr(self, self.sql_search_results)
 
-  def searchResults(self, REQUEST=None, **kw):
+  def searchResults(self, REQUEST=None, search_results_method=None, **kw):
     """ Returns a list of brains from a set of constraints on variables """
     if 'only_group_columns' in kw:
       # searchResults must be consistent in API with countResults
       raise ValueError('only_group_columns does not belong to this API '
         'level, use queryResults directly')
+    if search_results_method is None:
+      search_results_method = self.getSearchResultsMethod()
     return self.queryResults(
-      self.getSearchResultsMethod(),
+      search_results_method,
       REQUEST=REQUEST,
       extra_column_list=self.getCatalogSearchResultKeys(),
       **kw
