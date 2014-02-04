@@ -10,8 +10,8 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
-                <string>input_style</string>
                 <string>title</string>
+                <string>input_style</string>
               </list>
             </value>
         </item>

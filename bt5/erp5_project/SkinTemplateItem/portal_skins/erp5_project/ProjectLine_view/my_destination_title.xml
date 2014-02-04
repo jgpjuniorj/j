@@ -11,6 +11,7 @@
             <value>
               <list>
                 <string>description</string>
+                <string>portal_type</string>
               </list>
             </value>
         </item>
@@ -81,7 +82,18 @@
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>ProjectLine_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
+                </item>
+                <item>
+                    <key> <string>portal_type</string> </key>
+                    <value>
+                      <list>
+                        <tuple>
+                          <string>Organisation</string>
+                          <string>Organisation</string>
+                        </tuple>
+                      </list>
+                    </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>

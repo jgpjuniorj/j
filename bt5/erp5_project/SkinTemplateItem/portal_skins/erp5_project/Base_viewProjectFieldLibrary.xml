@@ -93,6 +93,65 @@
                         <string>my_view_mode_task_line_aggregate_title</string>
                         <string>my_view_mode_listbox_aggregate</string>
                         <string>my_view_mode_aggregate_title</string>
+                        <string>my_description</string>
+                        <string>my_destination_decision_title</string>
+                        <string>my_destination_section_title</string>
+                        <string>my_destination_title</string>
+                        <string>my_reference</string>
+                        <string>my_requirement_title</string>
+                        <string>my_source_decision_title</string>
+                        <string>my_source_section_title</string>
+                        <string>my_source_title_list</string>
+                        <string>my_start_date</string>
+                        <string>my_stop_date</string>
+                        <string>my_title</string>
+                        <string>my_translated_validation_state_title</string>
+                        <string>my_view_mode_source_administration_title</string>
+                        <string>my_dialog_mode_stop_date</string>
+                        <string>my_dialog_mode_start_date</string>
+                        <string>my_dialog_mode_translated_simulation_state_title</string>
+                        <string>my_gadget_listbox</string>
+                        <string>my_listbox_selection_list_lines</string>
+                        <string>my_default_order_title</string>
+                        <string>my_dialog_mode_format</string>
+                        <string>my_group_title_list</string>
+                        <string>my_int_index</string>
+                        <string>my_outcome_description</string>
+                        <string>my_predecessor_title_list</string>
+                        <string>my_price</string>
+                        <string>my_quantity</string>
+                        <string>my_quantity_unit</string>
+                        <string>my_requirement_logical_path_list</string>
+                        <string>my_resource_title</string>
+                        <string>my_source_trade_title_list</string>
+                        <string>my_start_date_range_max</string>
+                        <string>my_start_date_range_min</string>
+                        <string>my_stop_date_range_max</string>
+                        <string>my_stop_date_range_min</string>
+                        <string>my_short_title</string>
+                        <string>my_version</string>
+                        <string>my_comment</string>
+                        <string>my_initial_implementation_state</string>
+                        <string>my_amortisation_method</string>
+                        <string>my_source_project_title</string>
+                        <string>my_source_title</string>
+                        <string>my_total_price</string>
+                        <string>my_total_quantity</string>
+                        <string>my_variation_category_list</string>
+                        <string>my_price_currency</string>
+                        <string>my_specialise_title</string>
+                        <string>my_translated_causality_state_title</string>
+                        <string>my_translated_simulation_state_title</string>
+                        <string>my_destination_administration_title</string>
+                        <string>my_destination_payment_title</string>
+                        <string>my_destination_project_title</string>
+                        <string>my_source_administration_title</string>
+                        <string>my_source_payment_title</string>
+                        <string>my_task_line_price</string>
+                        <string>my_task_line_quantity</string>
+                        <string>my_task_line_quantity_unit</string>
+                        <string>my_task_line_requirement_logical_path_list</string>
+                        <string>my_task_line_resource_title</string>
                       </list>
                     </value>
                 </item>

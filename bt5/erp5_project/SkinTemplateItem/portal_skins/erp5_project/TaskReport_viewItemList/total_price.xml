@@ -10,10 +10,12 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
+                <string>description</string>
+                <string>editable</string>
                 <string>input_style</string>
-                <string>title</string>
                 <string>default</string>
                 <string>enabled</string>
+                <string>precision</string>
               </list>
             </value>
         </item>
@@ -76,6 +78,12 @@
                     <value> <string></string> </value>
                 </item>
                 <item>
+                    <key> <string>precision</string> </key>
+                    <value>
+                      <persistent> <string encoding="base64">AAAAAAAAAAQ=</string> </persistent>
+                    </value>
+                </item>
+                <item>
                     <key> <string>target</string> </key>
                     <value> <string></string> </value>
                 </item>
@@ -87,12 +95,20 @@
             <value>
               <dictionary>
                 <item>
+                    <key> <string>description</string> </key>
+                    <value> <string>A typical price of a unit.</string> </value>
+                </item>
+                <item>
+                    <key> <string>editable</string> </key>
+                    <value> <int>1</int> </value>
+                </item>
+                <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_view_mode_price</string> </value>
+                    <value> <string>my_total_price</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>input_style</string> </key>
@@ -101,10 +117,6 @@
                 <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
-                </item>
-                <item>
-                    <key> <string>title</string> </key>
-                    <value> <string>Total Price</string> </value>
                 </item>
               </dictionary>
             </value>
@@ -134,6 +146,19 @@
         <item>
             <key> <string>_text</string> </key>
             <value> <string>python:not here.Task_isSimpleTask()</string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="4" aka="AAAAAAAAAAQ=">
+    <pickle>
+      <global name="TALESMethod" module="Products.Formulator.TALESField"/>
+    </pickle>
+    <pickle>
+      <dictionary>
+        <item>
+            <key> <string>_text</string> </key>
+            <value> <string>here/getPricePrecision</string> </value>
         </item>
       </dictionary>
     </pickle>
