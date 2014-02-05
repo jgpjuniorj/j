@@ -9,15 +9,7 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list>
-                <string>title</string>
-                <string>catalog_index</string>
-                <string>portal_type</string>
-                <string>height</string>
-                <string>width</string>
-                <string>base_category</string>
-                <string>parameter_list</string>
-              </list>
+              <list/>
             </value>
         </item>
         <item>
@@ -67,12 +59,6 @@
                     <value> <string></string> </value>
                 </item>
                 <item>
-                    <key> <string>parameter_list</string> </key>
-                    <value>
-                      <persistent> <string encoding="base64">AAAAAAAAAAI=</string> </persistent>
-                    </value>
-                </item>
-                <item>
                     <key> <string>target</string> </key>
                     <value> <string></string> </value>
                 </item>
@@ -84,75 +70,19 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>base_category</string> </key>
-                    <value> <string>predecessor</string> </value>
-                </item>
-                <item>
-                    <key> <string>catalog_index</string> </key>
-                    <value> <string>title</string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_multi_relation_field</string> </value>
+                    <value> <string>my_predecessor_title_list</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewFieldLibrary</string> </value>
-                </item>
-                <item>
-                    <key> <string>height</string> </key>
-                    <value> <int>4</int> </value>
-                </item>
-                <item>
-                    <key> <string>portal_type</string> </key>
-                    <value>
-                      <list>
-                        <tuple>
-                          <string>Sale Order Line</string>
-                          <string>Sale Order Line</string>
-                        </tuple>
-                        <tuple>
-                          <string>Sale Order Milestone</string>
-                          <string>Sale Order Milestone</string>
-                        </tuple>
-                        <tuple>
-                          <string>Sale Packing List Line</string>
-                          <string>Sale Packing List Line</string>
-                        </tuple>
-                        <tuple>
-                          <string>Sale Packing List Milestone</string>
-                          <string>Sale Packing List Milestone</string>
-                        </tuple>
-                      </list>
-                    </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
                 </item>
-                <item>
-                    <key> <string>title</string> </key>
-                    <value> <string>Predecessor</string> </value>
-                </item>
-                <item>
-                    <key> <string>width</string> </key>
-                    <value> <int>30</int> </value>
-                </item>
               </dictionary>
             </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="2" aka="AAAAAAAAAAI=">
-    <pickle>
-      <global name="TALESMethod" module="Products.Formulator.TALESField"/>
-    </pickle>
-    <pickle>
-      <dictionary>
-        <item>
-            <key> <string>_text</string> </key>
-            <value> <string>python: [(\'parent_uid\', here.getParentUid())]</string> </value>
         </item>
       </dictionary>
     </pickle>
