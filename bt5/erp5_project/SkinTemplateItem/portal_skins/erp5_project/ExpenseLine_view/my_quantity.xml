@@ -9,9 +9,7 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list>
-                <string>input_style</string>
-              </list>
+              <list/>
             </value>
         </item>
         <item>
@@ -73,15 +71,11 @@
               <dictionary>
                 <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_view_mode_quantity</string> </value>
+                    <value> <string>my_quantity</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewFieldLibrary</string> </value>
-                </item>
-                <item>
-                    <key> <string>input_style</string> </key>
-                    <value> <string>-1234.5</string> </value>
+                    <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>

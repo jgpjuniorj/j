@@ -10,11 +10,11 @@
             <key> <string>delegated_list</string> </key>
             <value>
               <list>
-                <string>default</string>
                 <string>description</string>
-                <string>enabled</string>
-                <string>items</string>
                 <string>title</string>
+                <string>default</string>
+                <string>items</string>
+                <string>enabled</string>
               </list>
             </value>
         </item>
@@ -57,14 +57,6 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>default</string> </key>
-                    <value> <string></string> </value>
-                </item>
-                <item>
-                    <key> <string>description</string> </key>
-                    <value> <string></string> </value>
-                </item>
-                <item>
                     <key> <string>enabled</string> </key>
                     <value>
                       <persistent> <string encoding="base64">AAAAAAAAAAI=</string> </persistent>
@@ -88,10 +80,6 @@
                     <key> <string>target</string> </key>
                     <value> <string></string> </value>
                 </item>
-                <item>
-                    <key> <string>title</string> </key>
-                    <value> <string></string> </value>
-                </item>
               </dictionary>
             </value>
         </item>
@@ -108,22 +96,12 @@
                     <value> <string>Using this property you can set number of listbox lines in gadget.</string> </value>
                 </item>
                 <item>
-                    <key> <string>enabled</string> </key>
-                    <value> <int>1</int> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_gadget_preferences_list_field</string> </value>
+                    <value> <string>my_list_field</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Base_viewKnowledgePadFieldLibrary</string> </value>
-                </item>
-                <item>
-                    <key> <string>items</string> </key>
-                    <value>
-                      <list/>
-                    </value>
+                    <value> <string>Base_viewFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>

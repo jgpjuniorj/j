@@ -12,7 +12,7 @@
               <list>
                 <string>description</string>
                 <string>title</string>
-                <string>enabled</string>
+                <string>editable</string>
               </list>
             </value>
         </item>
@@ -78,12 +78,12 @@
                     <value> <string>A typical price of a unit.</string> </value>
                 </item>
                 <item>
-                    <key> <string>enabled</string> </key>
+                    <key> <string>editable</string> </key>
                     <value> <int>1</int> </value>
                 </item>
                 <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_price</string> </value>
+                    <value> <string>my_total_price</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>

@@ -9,11 +9,7 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list>
-                <string>description</string>
-                <string>title</string>
-                <string>portal_type</string>
-              </list>
+              <list/>
             </value>
         </item>
         <item>
@@ -74,10 +70,6 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>description</string> </key>
-                    <value> <string>The client for which the expense was done</string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string>my_destination_title</string> </value>
                 </item>
@@ -86,23 +78,8 @@
                     <value> <string>Base_viewProjectFieldLibrary</string> </value>
                 </item>
                 <item>
-                    <key> <string>portal_type</string> </key>
-                    <value>
-                      <list>
-                        <tuple>
-                          <string>Organisation</string>
-                          <string>Organisation</string>
-                        </tuple>
-                      </list>
-                    </value>
-                </item>
-                <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
-                </item>
-                <item>
-                    <key> <string>title</string> </key>
-                    <value> <string>Client</string> </value>
                 </item>
               </dictionary>
             </value>

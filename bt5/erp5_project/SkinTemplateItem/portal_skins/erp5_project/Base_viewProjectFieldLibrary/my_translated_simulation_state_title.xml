@@ -9,7 +9,9 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list/>
+              <list>
+                <string>title</string>
+              </list>
             </value>
         </item>
         <item>
@@ -32,10 +34,6 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>extra_context</string> </key>
-                    <value> <string></string> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string></string> </value>
                 </item>
@@ -54,10 +52,6 @@
             <key> <string>tales</string> </key>
             <value>
               <dictionary>
-                <item>
-                    <key> <string>extra_context</string> </key>
-                    <value> <string></string> </value>
-                </item>
                 <item>
                     <key> <string>field_id</string> </key>
                     <value> <string></string> </value>
@@ -78,22 +72,20 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>extra_context</string> </key>
-                    <value>
-                      <list/>
-                    </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
-                    <value> <string>my_translated_simulation_state_title</string> </value>
+                    <value> <string>my_translated_workflow_state_title</string> </value>
                 </item>
                 <item>
                     <key> <string>form_id</string> </key>
-                    <value> <string>Task_viewFieldLibrary</string> </value>
+                    <value> <string>Base_viewFieldLibrary</string> </value>
                 </item>
                 <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
+                </item>
+                <item>
+                    <key> <string>title</string> </key>
+                    <value> <string>Simulation State</string> </value>
                 </item>
               </dictionary>
             </value>

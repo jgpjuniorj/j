@@ -9,11 +9,7 @@
         <item>
             <key> <string>delegated_list</string> </key>
             <value>
-              <list>
-                <string>display_width</string>
-                <string>description</string>
-                <string>title</string>
-              </list>
+              <list/>
             </value>
         </item>
         <item>
@@ -74,14 +70,6 @@
             <value>
               <dictionary>
                 <item>
-                    <key> <string>description</string> </key>
-                    <value> <string>Using this property you can set requester in gadget</string> </value>
-                </item>
-                <item>
-                    <key> <string>display_width</string> </key>
-                    <value> <int>20</int> </value>
-                </item>
-                <item>
                     <key> <string>field_id</string> </key>
                     <value> <string>my_title</string> </value>
                 </item>
@@ -92,10 +80,6 @@
                 <item>
                     <key> <string>target</string> </key>
                     <value> <string>Click to edit the target</string> </value>
-                </item>
-                <item>
-                    <key> <string>title</string> </key>
-                    <value> <string>Requester</string> </value>
                 </item>
               </dictionary>
             </value>
