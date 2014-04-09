@@ -35,7 +35,7 @@
         </item>
         <item>
             <key> <string>action</string> </key>
-            <value> <string>Project_closeRelatedAssignments</string> </value>
+            <value> <string>Project_closeRelatedAssignmentList</string> </value>
         </item>
         <item>
             <key> <string>description</string> </key>
@@ -111,7 +111,7 @@
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>ClosedProject_closeRelatedAssigmentsDialog</string> </value>
+            <value> <string>ProjectModule_viewCloseRelatedAssigmentListDialog</string> </value>
         </item>
         <item>
             <key> <string>method</string> </key>
@@ -119,7 +119,7 @@
         </item>
         <item>
             <key> <string>name</string> </key>
-            <value> <string>ClosedProject_closeRelatedAssigmentsDialog</string> </value>
+            <value> <string>ProjectModule_viewCloseRelatedAssigmentListDialog</string> </value>
         </item>
         <item>
             <key> <string>pt</string> </key>

@@ -52,36 +52,10 @@
             <key> <string>_body</string> </key>
             <value> <string>from Products.ZSQLCatalog.SQLCatalog import Query\n
 closed_project_list = context.portal_catalog(portal_type=\'Project\', validation_state=\'invalidated\')\n
-assignment_list = []\n
+all_assignment_list = []\n
 for project in closed_project_list:\n
-   destination_project_uid_list = [x.uid for x in context.portal_catalog(\n
-     relative_url=\'%s/%%\' % project.getRelativeUrl())] + [project.getUid()]\n
-   sql_kw = {}\n
-   if kw.has_key(\'from_date\') and kw[\'from_date\'] is not None:\n
-     query_kw = {\'delivery.start_date\' : kw[\'from_date\'],\n
-              \'range\' : \'min\'}\n
-     sql_kw[\'delivery.start_date\'] = Query(**query_kw)\n
-   if kw.has_key(\'at_date\') and kw[\'at_date\'] is not None:\n
-     query_kw = {\'delivery.stop_date\' : kw[\'at_date\'],\n
-              \'range\' : \'ngt\'}\n
-     sql_kw[\'delivery.stop_date\'] = Query(**query_kw)\n
-   assignment_list.extend([x.getObject() for x in \\\n
-     context.portal_catalog(\n
-                         portal_type=\'Assignment\',\n
-                         destination_project_uid = destination_project_uid_list,\n
-                         validation_state = \'open\',\n
-                         **sql_kw)])\n
-\n
-\n
-def sortAssignment(a, b):\n
-  result = cmp(a.getStartDate(), b.getStartDate())\n
-  if result == 0:\n
-    result = cmp(a.getTitle(), b.getTitle())\n
-  return result\n
-\n
-assignment_list.sort(sortAssignment)\n
-\n
-return assignment_list\n
+   all_assignment_list.extend(project.Project_getDestinationProjectRelatedAssignmentList(**kw))\n
+return all_assignment_list\n
 </string> </value>
         </item>
         <item>

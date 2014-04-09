@@ -51,13 +51,18 @@
         <item>
             <key> <string>_body</string> </key>
             <value> <string>from Products.ERP5Type.Message import translateString\n
+from zExceptions import Unauthorized\n
 portal = context.getPortalObject()\n
 \n
 message = translateString("Selected Assignments are now invalidated.")\n
 for line in listbox:\n
   if line.has_key(\'listbox_key\') and line[\'listbox_selected\'] is True:\n
     assignment = portal.restrictedTraverse(line[\'listbox_key\'])\n
-    portal.portal_workflow.doActionFor(assignment, \'close_action\')\n
+    try:\n
+      portal.portal_workflow.doActionFor(assignment, \'close_action\')\n
+    except:\n
+      return context.Base_redirect(\'view\',\n
+                keep_items={\'portal_status_message\': "You are not allowed to close assignments"}, **kw)\n
 \n
 return context.Base_redirect(\'view\',\n
                 keep_items={\'portal_status_message\': message}, **kw)\n
@@ -69,7 +74,7 @@ return context.Base_redirect(\'view\',\n
         </item>
         <item>
             <key> <string>id</string> </key>
-            <value> <string>Project_closeRelatedAssignments</string> </value>
+            <value> <string>Project_closeRelatedAssignmentList</string> </value>
         </item>
       </dictionary>
     </pickle>
