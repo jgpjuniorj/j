@@ -5,7 +5,6 @@
 build/
 dist/
 erp5.util.egg-info/
-Products
 bt5/bt5list
 product/ERP5/bootstrap/bt5list
 product/__init__.py
