@@ -467,7 +467,8 @@ def to_utf8(text):
     text = text.encode('utf-8')
   return text
 
-def updateCellList(portal, line, cell_type, cell_range_method, cell_dict_list):
+def updateCellList(portal, line, cell_type, cell_range_method, cell_dict_list,
+                   activate_kw=None):
   """A matrixbox-like helper function to create cells at once.
 
     dicts in cell_dict_list can have following keys:
@@ -615,7 +616,7 @@ def updateCellList(portal, line, cell_type, cell_range_method, cell_dict_list):
       category_list = getSortedCategoryList(line, base_id, category_list)
       cell = line.newCell(portal_type=cell_type,
                           base_id=base_id,
-                          *category_list)
+                          *category_list, activate_kw=activate_kw)
 
       cell.edit(**mapped_value_dict)
       cell.setMappedValuePropertyList(mapped_value_dict.keys())
