@@ -39,7 +39,7 @@ if sys.version_info < (2, 7):
   collections.OrderedDict = OrderedDict
 
 
-if 1:
+if sys.version_info[:3] < (2, 7, 9):
     # Speed up email parsing (see also http://bugs.python.org/issue1243730)
     from email import parser, feedparser
 
