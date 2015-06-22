@@ -1,7 +1,14 @@
-#!/usr/bin/env python2.6
-import argparse, pprint, socket, sys, time, xmlrpclib
-from DummyTaskDistributionTool import DummyTaskDistributionTool
-from ERP5TypeTestSuite import ERP5TypeTestSuite
+#!/usr/bin/env python2.7
+import argparse, sys
+from erp5.util import taskdistribution
+
+# XXX: This import is required, just to populate sys.modules['test_suite'].
+# Even if it's not used in this file. Yuck.
+import ERP5TypeTestSuite
+
+def _parsingErrorHandler(data, _):
+  print >> sys.stderr, 'Error parsing data:', repr(data)
+taskdistribution.patchRPCParser(_parsingErrorHandler)
 
 def makeSuite(node_quantity=None, test_suite=None, revision=None,
               db_list=None, **kwargs):

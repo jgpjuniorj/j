@@ -8,7 +8,7 @@ from Testing import ZopeTestCase
 from ZODB.POSException import ConflictError
 from zLOG import LOG, ERROR
 from Products.CMFActivity.Activity.Queue import VALIDATION_ERROR_DELAY
-from Products.ERP5Type.tests import backportUnittest
+from Products.ERP5Type.tests.utils import addUserToDeveloperRole
 from Products.ERP5Type.tests.utils import createZServer
 
 
@@ -116,7 +116,7 @@ from OFS.Application import Application
 Application._p_resolveConflict = Application_resolveConflict
 
 
-class ProcessingNodeTestCase(backportUnittest.TestCase, ZopeTestCase.TestCase):
+class ProcessingNodeTestCase(ZopeTestCase.TestCase):
   """Minimal ERP5 TestCase class to process activities
 
   When a processing node starts, the portal may not exist yet, or its name is

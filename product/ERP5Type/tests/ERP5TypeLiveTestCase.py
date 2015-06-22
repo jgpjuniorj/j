@@ -169,7 +169,6 @@ class ERP5TypeTestReLoader(ERP5TypeTestLoader):
 
 def runLiveTest(test_list, verbosity=1, stream=None, **kw):
   from Products.ERP5Type.tests.runUnitTest import DebugTestResult
-  from Products.ERP5Type.tests import backportUnittest
   from StringIO import StringIO
   # Add path of the TestTemplateItem folder of the instance
   path = kw.get('path', None)
@@ -184,7 +183,7 @@ def runLiveTest(test_list, verbosity=1, stream=None, **kw):
   sys.path.extend(path for path in product_test_list
                   if path not in current_syspath)
 
-  TestRunner = backportUnittest.TextTestRunner
+  TestRunner = unittest.TextTestRunner
   if ERP5TypeLiveTestCase not in ERP5TypeTestCase.__bases__:
     ERP5TypeTestCase.__bases__ = ERP5TypeLiveTestCase,
   if kw.get('debug', False):
