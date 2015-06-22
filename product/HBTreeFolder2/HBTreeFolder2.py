@@ -33,6 +33,7 @@ from AccessControl.Permissions import access_contents_information, \
      view_management_screens
 from zLOG import LOG, INFO, ERROR, WARNING
 from Products.ZCatalog.Lazy import LazyMap, LazyFilter, LazyCat, LazyValues
+from AccessControl.SimpleObjectPolicies import ContainerAssertions
 
 
 manage_addHBTreeFolder2Form = DTMLFile('folderAdd', globals())
@@ -65,6 +66,72 @@ H_SEPARATOR = '-'
 
 class ExhaustedUniqueIdsError (Exception):
     pass
+
+
+class HBTreeObjectIds(object):
+
+    _index = float('inf')
+
+    def __init__(self, tree, base_id=_marker):
+        self._tree = tree
+        if base_id is _marker:
+            tree_id_list = tree.getTreeIdList()
+            self._count = tree._count
+        else:
+            tree_id_list = base_id,
+        check = tree._checkObjectId
+        self._keys = lambda: (x for base_id in tree_id_list
+                                for x in (tree._htree if base_id is None else
+                                          tree._getTree(base_id)).keys()
+                                if check((base_id, x)))
+
+    def _count(self):
+        count = sum(1 for x in self._keys())
+        self._count = lambda: count
+        return count
+
+    def __len__(self):
+        return self._count()
+
+    def __iter__(self):
+        return self._keys()
+
+    def __getitem__(self, item):
+        if item < 0:
+            item += self._count()
+        i = self._index
+        self._index = item + 1
+        i = item - i
+        try:
+            if i < 0:
+                self._ikeys = keys = self._keys()
+                return islice(keys, item, None).next()
+            return (islice(self._ikeys, i, None) if i else self._ikeys).next()
+        except StopIteration:
+            del self._index, self._ikeys
+            raise IndexError
+ContainerAssertions[HBTreeObjectIds] = 1
+
+class HBTreeObjectItems(HBTreeObjectIds):
+
+    def __iter__(self):
+        getOb = self._tree._getOb
+        return ((x, getOb(x)) for x in self._keys())
+
+    def __getitem__(self, item):
+        object_id = HBTreeObjectIds.__getitem__(self, item)
+        return object_id, self._tree._getOb(object_id)
+ContainerAssertions[HBTreeObjectItems] = 1
+
+class HBTreeObjectValues(HBTreeObjectIds):
+
+    def __iter__(self):
+        getOb = self._tree._getOb
+        return (getOb(x) for x in self._keys())
+
+    def __getitem__(self, item):
+        return self._tree._getOb(HBTreeObjectIds.__getitem__(self, item))
+ContainerAssertions[HBTreeObjectValues] = 1
 
 
 class HBTreeFolder2Base (Persistent):
