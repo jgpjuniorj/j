@@ -1,6 +1,7 @@
 #!/usr/bin/env python2.7
-import argparse, sys
+import argparse, pprint, socket, sys, time, xmlrpclib
 from erp5.util import taskdistribution
+from DummyTaskDistributionTool import DummyTaskDistributionTool
 
 # XXX: This import is required, just to populate sys.modules['test_suite'].
 # Even if it's not used in this file. Yuck.
