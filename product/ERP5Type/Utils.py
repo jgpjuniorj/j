@@ -880,7 +880,11 @@ def importLocalDocument(class_id, path=None, class_path=None):
     # XXX A new 'Patch' folder should be introduced instead. Each module would
     #     define 2 methods: 'patch' and 'unpatch' (for proper upgrading).
     if klass is None:
-      assert hasattr(module, 'patch')
+      # This situation may happened with old business templates, not only patch.
+      # So, just return without assertion. Othewise those modules are not loaded.
+      from zLOG import LOG, WARNING
+      LOG("importLocalDocument() the module does not define class. Please migrate:",
+          WARNING, class_path)
       return
     import erp5.document
     setattr(erp5.document, class_id, klass)
