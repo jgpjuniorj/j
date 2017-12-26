@@ -5,6 +5,8 @@ kw['mirror_section_uid'] = context.getUid()
 kw['omit_asset_decrease'] = 1
 kw['node_category_strict_membership'] = ['account_type/asset/receivable',
                                          'account_type/liability/payable']
-kw.update(kw['selection'].getParams())
+kw.update(
+  **context.getPortalObject().portal_selections.getSelectionParamsFor(selection_name, REQUEST=kw.get('REQUEST', None)))
+
 
 return context.Node_statAccountingBalance(**kw)
