@@ -111,7 +111,8 @@ class Field:
             # add 'here' if not in kw
             if not kw.has_key('here'):
                 kw['here'] = self.aq_parent
-            kw['request'] = self.REQUEST
+            if 'request' not in kw:
+                kw['request'] = self.REQUEST
             value = tales_expr.__of__(self)(
                 field=self,
                 form=self.aq_parent, **kw)
