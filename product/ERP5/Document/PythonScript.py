@@ -34,6 +34,7 @@ from Products.ERP5Type.XMLObject import XMLObject
 from Products.ERP5.Document.Ticket import Ticket
 from Products.PythonScripts.PythonScript import \
   PythonScript as ZopePythonScript
+from Products.ERP5.mixin.expression import ExpressionMixin
 
 # Only needed until skin tool is migrated
 manage_addPythonScriptFormThroughZMI = \
@@ -64,7 +65,7 @@ class PythonScriptThroughZMI(XMLObject):
     def __init__(self, *args, **kw):
       assert False
 
-class PythonScript(XMLObject, ZopePythonScript):
+class PythonScript(XMLObject, ZopePythonScript, ExpressionMixin):
     """ Script python for ERP5
     """
 
