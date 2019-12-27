@@ -59,7 +59,7 @@ class TestPortalTypeClass(ERP5TypeTestCase):
     Check migration of persistent objects with old classes
     like Products.ERP5(Type).Document.Person.Person
     """
-    from Products.ERP5Type.Document.Person import Person
+    from erp5.component.document.Person import Person
     person_module = self.portal.person_module
     connection = person_module._p_jar
     newId = self.portal.person_module.generateNewId
@@ -2563,7 +2563,7 @@ class TestZodbDocumentComponent(_TestZodbComponent):
   _document_class = DocumentComponent
 
   def _getValidSourceCode(self, class_name):
-    return '''from Products.ERP5.Document.Person import Person
+    return '''from erp5.component.document.Person import Person
 
 class %sAnything:
   pass
@@ -2580,7 +2580,7 @@ class %s(Person):
     self.assertEqual(component.getTextContentErrorMessageList(), [])
     self.assertEqual(component.getTextContentWarningMessageList(), [])
 
-    component.setTextContent("""from Products.ERP5.Document.Person import Person
+    component.setTextContent("""from erp5.component.document.Person import Person
 
 class DifferentFromReference(Person):
   pass
@@ -2601,7 +2601,7 @@ class DifferentFromReference(Person):
     that the newly-defined function on ZODB Component can be called as well as
     methods from Person Document
     """
-    from Products.ERP5.Document.Person import Person as PersonDocument
+    from erp5.component.document.Person import Person as PersonDocument
 
     self.failIfModuleImportable('TestPortalType')
 
@@ -2612,7 +2612,7 @@ class DifferentFromReference(Person):
     test_component = self._newComponent(
       'TestPortalType',
       """
-from Products.ERP5.Document.Person import Person
+from erp5.component.document.Person import Person
 
 class TestPortalType(Person):
   def test42(self):
