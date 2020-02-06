@@ -669,7 +669,15 @@ _HANDLER_LIST = (
 # Bad value, accidentally put everywhere long ago
 _BROKEN_BTREE_HANDLER = 'CMFBTreeFolderHandler'
 
-class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
+# Import order:
+# - FolderMixIn can be about anywhere, let's put it first
+# - our CopyContainer before ObjectManager, which has its own (which we do not
+#   want)
+# - ObjectManager before Base, as Base is only a PropertyManager and this needs
+#   to be overridden
+# - Base before generic container types, to allow customising their methods
+# - container types, because instances of Folder must be instances of these
+class Folder(FolderMixIn, CopyContainer, ObjectManager, Base, OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder):
   """
   A Folder is a subclass of Base but not of XMLObject.
   Folders are not considered as documents and are therefore
@@ -719,18 +727,7 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
                     )
 
   # Class inheritance fixes
-  security.declareProtected( Permissions.ModifyPortalContent, 'edit' )
-  edit = Base.edit
-  security.declareProtected( Permissions.ModifyPortalContent, '_edit' )
-  _edit = Base._edit
-  security.declareProtected( Permissions.ModifyPortalContent, 'setTitle' )
-  setTitle = Base.setTitle
-  security.declareProtected( Permissions.AccessContentsInformation, 'title_or_id' )
-  title_or_id = Base.title_or_id
-  security.declareProtected( Permissions.AccessContentsInformation, 'Title' )
-  Title = Base.Title
-  _setPropValue = Base._setPropValue
-  _propertyMap = Base._propertyMap # are there any others XXX ?
+  _postCopy = Base._postCopy
   PUT_factory = None
   # XXX Prevent inheritance from PortalFolderBase
   description = None
@@ -763,12 +760,6 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
   def _count(self):
     del self.__dict__['_count']
     self._p_changed = 1
-
-  security.declarePublic('newContent')
-  def newContent(self, *args, **kw):
-    """ Create a new content """
-    # Create data structure if none present
-    return FolderMixIn.newContent(self, *args, **kw)
 
   def _getFolderHandlerData(self):
     # Internal API working around bogus _folder_handler values.
@@ -1316,9 +1307,6 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
 
 
   # Catalog related
-  security.declarePublic('reindexObject')
-  reindexObject = Base.reindexObject
-
   security.declareProtected(Permissions.ModifyPortalContent,
                             'reindexObjectSecurity')
   def reindexObjectSecurity(self, *args, **kw):
@@ -1430,11 +1418,14 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
                                  spec=(), filter=None, portal_type=(), base=0,
                                  keep_default=None, checked_permission=None):
     if category == 'content':
-      content_list = self.searchFolder(portal_type=spec)
-      return map(lambda x: x.relative_url, content_list)
-    else:
-      return Base.getCategoryMembershipList(self, category,
-          spec=spec, filter=filter, portal_type=portal_type, base=base)
+      return [x.relative_url for x in self.searchFolder(portal_type=spec)]
+    return super(Folder, self).getCategoryMembershipList(
+      category,
+      spec=spec,
+      filter=filter,
+      portal_type=portal_type,
+      base=base,
+    )
 
   security.declareProtected(Permissions.AccessContentsInformation,
                             'checkConsistency')
@@ -1453,7 +1444,11 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
         error_list += [ConsistencyMessage(
           self, self.getRelativeUrl(), 'BTree Inconsistency (fixed)')]
     # Call superclass
-    error_list += Base.checkConsistency(self, fixit=fixit, filter=filter, **kw)
+    error_list += super(Folder, self).checkConsistency(
+      fixit=fixit,
+      filter=filter,
+      **kw
+    )
     # We must commit before listing folder contents
     # in case we erased some data
     if fixit:
@@ -1502,13 +1497,6 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
                                               .getTypeHiddenContentTypeList()
     return [ ti.id for ti in self.allowedContentTypes()
                if ti.id not in hidden_type_list ]
-
-  # Multiple Inheritance Priority Resolution
-  _setProperty = Base._setProperty
-  setProperty = Base.setProperty
-  getProperty = Base.getProperty
-  hasProperty = Base.hasProperty
-  view = Base.view
 
   # Aliases
   security.declareProtected(Permissions.AccessContentsInformation,
@@ -1596,7 +1584,7 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
       Make document behave as a template.
       A template is no longer indexable
     """
-    Base.makeTemplate(self)
+    super(Folder, self).makeTemplate()
     for o in self.objectValues():
       if getattr(aq_base(o), 'makeTemplate', None) is not None:
         o.makeTemplate()
@@ -1607,7 +1595,7 @@ class Folder(OFSFolder2, CMFBTreeFolder, CMFHBTreeFolder, Base, FolderMixIn):
     """
       Make document behave as standard document (indexable)
     """
-    Base.makeTemplateInstance(self)
+    super(Folder, self).makeTemplateInstance()
     for o in self.objectValues():
       if getattr(aq_base(o), 'makeTemplateInstance', None) is not None:
         o.makeTemplateInstance()
@@ -1729,19 +1717,3 @@ for source_klass, destination_klass in \
       # Zope 2.7 required to have methodId__roles__ defined
       # to know the security ot the method
       setattr(destination_klass, method_id+'__roles__', None)
-
-# Some of Folder base inherits indirectly from a different CopyContainer which
-# lacks our customisations.
-# Resolve all inheritence conflicts between CopyContainer (which Folder
-# inherits from via Base) and those bases in favour of the property
-# from Base (so it may override CopyContainer).
-for CopyContainer_property_id in CopyContainer.__dict__:
-  if CopyContainer_property_id.startswith('__') or CopyContainer_property_id in Folder.__dict__:
-    continue
-  try:
-    Base_property = getattr(Base, CopyContainer_property_id)
-  except AttributeError:
-    continue
-  if isinstance(Base_property, ClassSecurityInfo):
-    continue
-  setattr(Folder, CopyContainer_property_id, Base_property)

@@ -706,11 +706,12 @@ def initializePortalTypeDynamicWorkflowMethods(ptype_klass, portal_workflow):
       else:
         method.registerTransitionAlways(portal_type, wf_id, tr_id)
 
-class Base( CopyContainer,
+class Base(
+            CopyContainer,
+            PropertyManager,
             PortalContent,
             ActiveObject,
             OFS.History.Historical,
-            PropertyManager,
             PropertyTranslatableBuiltInDictMixIn,
             JSONRepresentableMixin,
             ):
